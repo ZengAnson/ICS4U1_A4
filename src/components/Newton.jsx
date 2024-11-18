@@ -4,9 +4,9 @@ import { useState } from 'react';
 function Newton() {
     //variable
     const [guess, setGuess] = useState(0);
-    const [approx, setApprox] = useState(0);
     let x0 = guess;
     let x1 = x0;
+    const [approx, setApprox] = useState(0);
     //calculate function
     function calculate() {
         do {
@@ -20,10 +20,12 @@ function Newton() {
     return (
         <div className="newton">
             <h1>Newton's Method</h1>
-            <label>Root Guess:</label>
-            <input type="number" value={guess} onChange={(event) => {setGuess(event.target.value)}}></input>
-            <label>Root Approximation (Result):</label>
-            <input type="text" value={approx} readOnly></input>
+            <div className="content">
+                <label>Root Guess:</label>
+                <input type="number" value={guess} onChange={(event) => { setGuess(event.target.value) }}></input>
+                <label>Root Approximation (Result):</label>
+                <input type="text" value={approx} className="unclickable" readOnly></input>
+            </div>
             <button onClick={(event) => calculate()}>Calculate</button>
         </div>
     )

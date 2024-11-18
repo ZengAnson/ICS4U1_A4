@@ -23,22 +23,24 @@ function Polynomial() {
             }
             let value = parseInt(coeff[i]) * Math.pow(x, parseInt(exp[i]));
             output.sum += value;
-        } return setEq(output.equ), setFunc(output.sum);
+        } return setEq(output.equ), setFunc(Math.round((100*output.sum),2 )/100);
     }
     //return
     return (
         <div className="poly">
             <h1>Polynomial Function</h1>
-            <label>Coefficients:</label>
-            <input type="text" value={coefficient} onChange={(event) => {setCoefficient(event.target.value)}}></input>
-            <label>Exponents:</label>
-            <input type="text" value={exponent} onChange={(event) => (setExponent(event.target.value))}></input>
-            <label>x Value:</label>
-            <input type="number" value={x} onChange={(event) => (setX(event.target.value))}></input>
-            <label>Polynomial Function:</label>
-            <input type="text" value={eq} readOnly></input>
-            <label>Polynomial Evaluation:</label>
-            <input type="text" value={func} readOnly></input>
+            <div className="content">
+                <label>Coefficients:</label>
+                <input type="text" value={coefficient} onChange={(event) => {setCoefficient(event.target.value)}}></input>
+                <label>Exponents:</label>
+                <input type="text" value={exponent} onChange={(event) => (setExponent(event.target.value))}></input>
+                <label>x Value:</label>
+                <input type="number" value={x} onChange={(event) => (setX(event.target.value))}></input>
+                <label>Polynomial Function:</label>
+                <input type="text" value={eq} className="unclickable" readOnly></input>
+                <label>Polynomial Evaluation:</label>
+                <input type="text" value={func} className="unclickable" readOnly></input>
+            </div>
             <button onClick={(event) => calculate()}>Calculate</button>
         </div>
     )

@@ -7,7 +7,7 @@ import Poly from './components/Polynomial.jsx'
 
 function App() {
   return (
-    <div>
+    <div className="box">
       <HeronForm />
       <Amb />
       <Newton />

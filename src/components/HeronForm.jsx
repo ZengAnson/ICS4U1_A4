@@ -20,6 +20,7 @@ function Heron() {
     return (
         <div className="heron">
             <h1>Heron's Formula</h1>
+            <div className="content">
             <label>Side A:</label>
             <input type="number" value={a} onChange={(event) => { setA(event.target.value) }}></input>
             <label>Side B:</label>
@@ -27,7 +28,8 @@ function Heron() {
             <label>Side C:</label>
             <input type="number" value={c} onChange={(event) => { setC(event.target.value) }}></input>
             <label>Area (Result):</label>
-            <input type="text" value={area} readOnly />
+            <input type="text" value={area} className="unclickable" readOnly/>
+            </div>
             <button onClick={(event) => calculate()}>Calculate</button>
         </div>
     )
