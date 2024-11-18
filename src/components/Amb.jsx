@@ -7,6 +7,7 @@ function Amb() {
     const [a, setA] = useState(0);
     const [b, setB] = useState(0);
     const [ambiguous, setAmbiguous] = useState(" ");
+
     //calculation
     function calculate() {
         if (angle > 0 && a > 0 && b > 0) {
@@ -24,7 +25,7 @@ function Amb() {
             }
         } return setAmbiguous("No triangle"); //case a<h, angle>90 && a<b || a==b
     }
-    //return
+
     return (
         <div className="amb">
             <h1>Ambiguous Case</h1>

@@ -7,6 +7,7 @@ function Heron() {
     const [b, setB] = useState(0);
     const [c, setC] = useState(0);
     const [area, setArea] = useState(0);
+
     //calculate function
     function calculate() {
         const root = Math.sqrt(4 * a * a * b * b - Math.pow((a * a + b * b - c * c), 2));
@@ -16,7 +17,7 @@ function Heron() {
             }
         } return setArea("No triangle");
     }
-    //return
+
     return (
         <div className="heron">
             <h1>Heron's Formula</h1>

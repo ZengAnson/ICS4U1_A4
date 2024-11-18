@@ -7,6 +7,7 @@ function Newton() {
     let x0 = guess;
     let x1 = x0;
     const [approx, setApprox] = useState(0);
+
     //calculate function
     function calculate() {
         do {
@@ -16,7 +17,7 @@ function Newton() {
         while (Math.abs(x0 - x1) > 0.0001);
         return setApprox(Math.round(x1 * 100) / 100);
     }
-    //return
+
     return (
         <div className="newton">
             <h1>Newton's Method</h1>
